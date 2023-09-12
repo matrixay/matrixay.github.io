@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+          <head>
+        <meta charset="utf-8">
+            
+            <title>
+                hexo-deployer-git | 
+            </title>
+            <meta content="width=device-width, initial-scale=1" name="viewport">
+            <meta name="theme-color" content="#4184f3">
+            
+            
+            <link href="/favicon.ico" rel="icon"/>
+            
+
+            
+<link rel="stylesheet" href="/css/highlight.light.css">
+
+            
+<link rel="stylesheet" href="/css/prism-customize.css">
+
+            
+<link rel="stylesheet" href="/css/nav-icon.css">
+
+            
+<link rel="stylesheet" href="/css/waves.min.css">
+
+            
+<link rel="stylesheet" href="/css/jquery.tocify.css">
+
+            
+<link rel="stylesheet" href="/css/main.css">
+
+            
+<link rel="stylesheet" href="/css/nav-indicator.css">
+
+            
+  
+
+  
+            </meta>
+        </meta>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+
+    <body>
+        <header>
+            <!-- cover image or sth. -->
+        </header>
+        <div id="main" class="m-scene">
+            
+<div class="nav-wrapper">
+
+    <div class="container">
+        <nav>
+            <div class="logo wave">
+                <a href="/" id="logo">
+                    
+                </a>
+            </div>
+            <div class="nav-toggle-icon" >
+                <div class="material-hamburger">
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                </div>
+            </div>
+            <div class="menu-wrapper">
+                <div class="nav-indicator">
+                </div>
+                <ul class="menus">
+                    
+                     
+                        <li>
+                            <a class="wave " href="/archives">
+                                Archive
+                            </a>
+                        </li>
+                     
+                    
+                   
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+            <div class="container content">
+                <div class="scene_element scene_element--fadein">
+                    <div class="row">
+    <div class="main">
+        <article>
+          
+          <header class="post-header">
+          
+          </header>
+          <h1 class="post-title">hexo-deployer-git</h1>
+
+          <section class="post-info">
+            <span class="post-date">2019/10/28</span>
+            
+            
+          </section>
+
+          <section class="post-content">
+            <p>Installation</p>
+<p>$ npm install hexo-deployer-git –save</p>
+<p>Options</p>
+<p>You can configure this plugin in _config.yml.</p>
+<h1 id="You-can-use-this"><a href="#You-can-use-this" class="headerlink" title="You can use this:"></a>You can use this:</h1><p>deploy:<br>  type: git<br>  repo: <repository url><br>  branch: [branch]<br>  message: [message]<br>  name: [git user]<br>  email: [git email]<br>  extend_dirs: [extend directory]<br>  ignore_hidden: false # default is true<br>  ignore_pattern: regexp  # whatever file that matches the regexp will be ignored when deploying</p>
+<h1 id="or-this"><a href="#or-this" class="headerlink" title="or this:"></a>or this:</h1><p>deploy:<br>  type: git<br>  message: [message]<br>  repo:<br>    github: <repository url>,[branch]<br>    coding: <repository url>,[branch]<br>  extend_dirs:<br>    - [extend directory]<br>    - [another extend directory]<br>  ignore_hidden:<br>    public: false<br>    [extend directory]: true<br>    [another extend directory]: false<br>  ignore_pattern:<br>    [folder]: regexp  # or you could specify the ignore_pattern under a certain directory</p>
+<pre><code>repo: Repository URL
+branch: Git branch to deploy the static site to
+message: Commit message. The default commit message is Site updated: &#123;&#123; now('YYYY-MM-DD HH:mm:ss') &#125;&#125;.
+name and email: User info for committing the change, overrides global config. This info is independent of git login.
+extend_dirs: Add some extensions directory to publish. e.g demo, examples
+ignore_hidden (Boolean|Object): whether ignore hidden files to publish. the github requires the .nojekyll in root.
+    Boolean: for all dirs.
+    Object: for public dir and extend dir:
+        public: the public dir defaults.
+        [extend directory]
+ignore_pattern (Object|RegExp): Choose the ignore pattern when deploying
+    RegExp: for all dirs.
+    Object: specify the ignore pattern under certain directory. For example, if you want to push the source files and generated files at the same time to two different branches. The option should be like
+
+# _config.yaml
+deploy:
+  - type: git
+    repo: git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git
+    branch: master
+  - type: git
+    repo: git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git
+    branch: src
+    extend_dirs: /
+    ignore_hidden: false
+    ignore_pattern:
+        public: .
+</code></pre>
+<p>How it works</p>
+<p>hexo-deployer-git works by generating the site in .deploy_git and force pushing to the repo(es) in config. If .deploy_git does not exist, a repo will initialized (git init). Otherwise the curent repo (with its commit history) will be used.</p>
+<p>Users can clone the deployed repo to .deploy_git to keep the commit history.</p>
+<p>git clone <gh-pages repo> .deploy_git</p>
+<p>Reset</p>
+<p>Remove .deploy_git folder.</p>
+<p>$ rm -rf .deploy_git</p>
+<p>License</p>
+<p>MIT</p>
+
+          </section>
+        </article>
+        
+
+       
+        <div class="pager">
+          
+            <a class="post-prev pager-item" href="/office.html" >
+              <strong class="article-nav-caption">Newer</strong>
+              <p class="post-nav-title">Microsoft office 2010 精简版 三合一74M 四合一89M 自动激活</p>
+            </a>
+          
+          
+            <a class="post-next pager-item" href="/next.html">
+              <strong class="article-nav-caption">Older</strong>
+              <p class="post-nav-title">Elegant Theme for Hexo</p>
+            </a>
+          
+        </div>
+        
+
+         <!-- comments -->
+        <div class="comment-section">
+  
+    
+
+
+</div>
+
+    </div>
+    
+</div>
+
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+    <p>Powered by<a href="http://hexo.io/" target="_blank"> Hexo</a> Theme <a target="_blank" rel="noopener" href="https://github.com/wayou/hexo-theme-gstyle">gstyle</a></p>
+    <p>
+        &copy; 2023 ioio
+    </p>
+</footer>
+
+<script src="/lib/jquery.js"></script>
+
+
+<script src="/lib/waves.js"></script>
+
+
+<script src="/lib/jquery-ui.js"></script>
+
+
+<script src="/lib/jquery.tocify.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    </body>
+</html>
